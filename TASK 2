@@ -1,0 +1,25 @@
+void PrintRoom(int room[ROWS][COLS]) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            if (room[i][j] == 0) {
+                printf("%c", ' ');
+            }
+            else if (room[i][j] == 1) {
+                printf("%c", '#');
+            }
+             else if (room[i][j] == 2) {
+                 printf("%c", '*');
+             }
+             else if (room[i][j] == 3) {
+                 printf("%c", 'O');
+             }
+             else if (room[i][j] == 4) {
+                 printf("%c", '@');
+             }
+             else if (room[i][j] == 5 || room[i][j] == 6) {
+                 printf("%c", 'X');
+             }
+        }
+        printf("\n");
+    }
+}

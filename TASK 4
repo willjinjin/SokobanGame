@@ -1,0 +1,10 @@
+void LocatePerson(int room[ROWS][COLS], int *row, int *col) {
+    for (int i = 0; i<ROWS; i++) {
+        for (int j = 0; j<COLS; j++) {
+            if (room[i][j] == 5 || room[i][j] == 6) {
+                *row = i;
+                *col = j;
+            }
+        }
+    }
+}

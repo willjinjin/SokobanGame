@@ -1,0 +1,38 @@
+void MakeBox(char *design, int width, int height) {
+    int k = 0; 
+
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
+                design[k] = '#';
+            } else {
+                design[k] = ' '; 
+            }
+            k++;
+             
+            
+        }
+        design[k] = '\n';
+        k++;
+    }
+    design[k] = '\0';
+    if (width > 2 && height > 2) {
+        if (width % 2 != 0 && height % 2 != 0) {
+            design[(width+1)*height/2 - 1] = 'X';
+        }
+        if (width % 2 == 0 && height%2 !=0) {
+            design[(width+1)*height/2] = 'X';
+            design[(width+1)*height/2 - 1] = 'X';
+        }
+        if (width % 2 != 0 && height % 2 == 0) {
+            design[(width+1)*(height/2 - 1) + width/2  ] = 'X';
+            design[(width+1)*(height/2) + width/2 ] = 'X';
+        }
+        if (width % 2 == 0 && height % 2 == 0) {
+            design[(width+1)*(height/2 -1) + width/2] = 'X';
+            design[(width+1)*height/2 + width/2] = 'X';
+            design[(width+1)*(height/2 -1) + width/2 -1] = 'X';
+            design[(width+1)*height/2 + width/2 - 1] = 'X';
+        }
+    }
+}

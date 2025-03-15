@@ -1,0 +1,29 @@
+
+void MakeMove(int room[ROWS][COLS], char move, char *allMoves) {
+    int m = 0;
+    int n = 0;
+    if (move == 'w') {
+        m--;
+    }
+    else if (move == 's') {
+        m++;
+    }
+    else if (move == 'a') {
+        n--;
+    }
+    else if (move == 'd') {
+        n++;
+    }
+    
+    int rpos, cpos;
+    LocatePerson(room, &rpos, &cpos);
+    
+    if (room[rpos+m][cpos+n] != 1) {
+        room[rpos+m][cpos+n] = 5; 
+        room[rpos][cpos] = 0;
+        int len = strlen(allMoves);
+        allMoves[len] = move;   
+        allMoves[len + 1] = '0'; 
+        allMoves[len + 2] = '\0'; 
+    }
+}

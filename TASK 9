@@ -1,0 +1,19 @@
+int CheckGameOver(int room[ROWS][COLS]) {
+    int count = 0;
+    for (int i = 0; i<ROWS; i++) {
+        for (int j = 0; j<COLS; j++) {
+            if (room[i][j] == 2 || room[i][j] == 6) {
+                return 0;
+            }
+            if (room[i][j] == 4) {
+                count++;
+            }
+            }
+        }
+    if (count != 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
